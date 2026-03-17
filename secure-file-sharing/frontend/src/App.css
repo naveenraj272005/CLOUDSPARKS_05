@@ -1,0 +1,267 @@
+/* src/App.css — Global styles for Secure File Sharing Platform */
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Auth Pages ── */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card h2 {
+  font-size: 1.4rem;
+  color: #0f3460;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.auth-card h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.auth-link a { color: #0f3460; text-decoration: none; font-weight: 600; }
+.auth-link a:hover { text-decoration: underline; }
+
+/* ── Form Elements ── */
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.select-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  outline: none;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.select-input:focus { border-color: #0f3460; background: #fff; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-primary { background: #0f3460; color: #fff; width: 100%; padding: 12px; }
+.btn-outline { background: transparent; color: #0f3460; border: 1.5px solid #0f3460; }
+.btn-success { background: #2ecc71; color: #fff; }
+.btn-danger  { background: #e74c3c; color: #fff; }
+.btn-sm      { padding: 6px 14px; font-size: 0.82rem; }
+
+/* ── Alerts ── */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.alert-error   { background: #fdecea; color: #c0392b; border-left: 4px solid #e74c3c; }
+.alert-success { background: #eafaf1; color: #1e8449; border-left: 4px solid #2ecc71; }
+
+/* ── Dashboard Layout ── */
+.dashboard { min-height: 100vh; display: flex; flex-direction: column; }
+
+.dashboard-header {
+  background: #0f3460;
+  color: #fff;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dashboard-header h1 { font-size: 1.3rem; }
+
+.header-right { display: flex; align-items: center; gap: 16px; }
+
+.user-email {
+  font-size: 0.88rem;
+  opacity: 0.85;
+  background: rgba(255,255,255,0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.dashboard-header .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+  padding: 6px 16px;
+}
+
+.dashboard-main { padding: 32px; max-width: 1100px; margin: 0 auto; width: 100%; }
+
+/* ── Upload Section ── */
+.upload-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.upload-section h2 { font-size: 1.1rem; margin-bottom: 16px; color: #0f3460; }
+
+.upload-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.file-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 12px;
+  border: 1.5px dashed #aaa;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.file-input:hover { border-color: #0f3460; }
+
+.select-input { width: auto; min-width: 130px; }
+
+/* ── Files Section ── */
+.files-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.files-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.files-header h2 { font-size: 1.1rem; color: #0f3460; }
+
+.table-wrapper { overflow-x: auto; }
+
+.files-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.files-table th {
+  background: #f0f2f5;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.files-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: middle;
+}
+
+.files-table tr:last-child td { border-bottom: none; }
+.files-table tr:hover td { background: #fafbff; }
+
+.file-name { font-weight: 500; max-width: 280px; word-break: break-all; }
+
+.actions { display: flex; gap: 8px; }
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-private { background: #fdecea; color: #c0392b; }
+.badge-shared  { background: #eafaf1; color: #1e8449; }
+
+/* ── States ── */
+.loading, .empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.loading::before { content: "⏳ "; }
+.empty-state::before { content: "📂 "; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .dashboard-main { padding: 16px; }
+  .upload-form { flex-direction: column; align-items: stretch; }
+  .select-input { width: 100%; }
+  .btn-primary { width: 100%; }
+  .dashboard-header { padding: 12px 16px; }
+  .dashboard-header h1 { font-size: 1rem; }
+  .user-email { display: none; }
+}
